@@ -5,5 +5,4 @@ public interface IDummyRepository
     IStockRepository Stock { get; }
 
     IStockSectorRepository StockSector { get; }
-
 }

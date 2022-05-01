@@ -28,6 +28,7 @@ else
                           <th scope="col">Code</th>
                           <th scope="col">Name</th>
                           <th scope="col">Sector</th>
+                          <th scope="col">IsActive</th>
                           <th scope="col">Action</th>
                         </tr>
                   </thead>
@@ -37,7 +38,8 @@ else
                                 <tr>
                                     <td>@stock.Code</td>
                                     <td>@stock.Code</td>
-                                    <td>@stock.StockSector</td>
+                                    <td>@stock.StockSector.Name</td>
+                                    <td>@stock.IsActive</td>
                                     <td>
                                         <div class="btn-group" role="group" aria-label="Basic mixed styles example">
                                           <button type="button" class="btn btn-danger" @onclick="@(() => FetchStockSectorById(stock.StockSectorId))">Edit</button>
@@ -58,7 +60,7 @@ else
             Close="Close"
             @ref="modal">
         <ChildComponent >
-            <form>
+            <EditForm Model="@Stock">
               <div class="mb-3">
                 <label for="Code" class="col-form-label">Code</label>
                 <input type="text" class="form-control" @bind-value="Stock.Code">
@@ -79,7 +81,11 @@ else
                     }
                 </select>
               </div>
-            </form>
+              <div class="mb-3">
+                  <InputCheckbox @bind-Value="Stock.IsActive" />
+                  <label for="Active" class="col-form-label">Active</label>
+              </div>
+            </EditForm>
         </ChildComponent>
         <ChildButtonComponent>
             <button type="button" class="btn btn-primary" @onclick="Create">Simpan</button>
@@ -107,7 +113,7 @@ else
             Close="Close"
             @ref="modal">
         <ChildComponent >
-            <form>
+            <EditForm Model="@Stock">
               <div class="mb-3">
                 <label for="Code" class="col-form-label">Code</label>
                 <input type="text" class="form-control" @bind-value="Stock.Code">
@@ -128,7 +134,11 @@ else
                     }
                 </select>
               </div>
-            </form>
+               <div class="mb-3">
+                  <InputCheckbox @bind-Value="Stock.IsActive" />
+                  <label for="Active" class="col-form-label">Active</label>
+              </div>
+            </EditForm>
         </ChildComponent>
         <ChildButtonComponent>
             <button type="button" class="btn btn-primary" @onclick="Update">Update</button>

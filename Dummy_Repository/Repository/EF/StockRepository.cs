@@ -108,6 +108,8 @@ namespace Dummy.Repository
 
             objFromDb.Code = objDTO.Code;
             objFromDb.Name = objDTO.Name;
+            objFromDb.StockSectorId = objDTO.StockSectorId;
+            objFromDb.IsActive = objDTO.IsActive;
             objFromDb.UpdateDate = DateTime.Now;
 
             await _db.SaveChangesAsync();
