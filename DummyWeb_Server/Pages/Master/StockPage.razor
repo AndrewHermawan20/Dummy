@@ -1,0 +1,138 @@
+﻿@namespace DummyWeb_Server.Pages
+@page "/stock"
+@inherits CommonComponentBase
+
+
+@if(IsVisibleModalSpinner)
+{
+    <Spinner></Spinner>
+}
+else
+{
+    <div class="row mt-4">
+        <div class="col-6">
+            <h4 class="card-title text-primary">Stock</h4>
+        </div>
+        <div class="col-4 offset-2">
+            <button  class="btn btn-primary form-control" @onclick="(() => IsVisibleModalCreate = true)">Add New Stock </button>
+        </div>
+        @if(IsVisibleModalSpinner)
+        {
+            <Spinner></Spinner>
+        }
+        else
+        {
+             <table class="table">
+                  <thead>
+                        <tr>
+                          <th scope="col">Code</th>
+                          <th scope="col">Name</th>
+                          <th scope="col">Sector</th>
+                          <th scope="col">Action</th>
+                        </tr>
+                  </thead>
+                  <tbody>
+                        @foreach(var stock in Stocks)
+                            {
+                                <tr>
+                                    <td>@stock.Code</td>
+                                    <td>@stock.Code</td>
+                                    <td>@stock.StockSector</td>
+                                    <td>
+                                        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                                          <button type="button" class="btn btn-danger" @onclick="@(() => FetchStockSectorById(stock.StockSectorId))">Edit</button>
+                                          <button type="button" class="btn btn-success" @onclick="(() => FetchForDelete(stock))">Delete</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                    </tbody>
+            </table>
+        }
+    </div>
+}
+@if(IsVisibleModalCreate)
+{
+    <Modal 
+            ModalHeader="Buat Baru"
+            Close="Close"
+            @ref="modal">
+        <ChildComponent >
+            <form>
+              <div class="mb-3">
+                <label for="Code" class="col-form-label">Code</label>
+                <input type="text" class="form-control" @bind-value="Stock.Code">
+              </div>
+              <div class="mb-3">
+                <label for="Name" class="col-form-label">Name</label>
+                <input type="text" class="form-control" @bind-value="Stock.Name">
+              </div>
+              <div class="mb-3">
+                <label for="Sector" class="col-form-label">Sector</label>
+                <select class="form-control" id="Sector" @bind="Stock.StockSectorId">
+                    @if(Sectors != null)
+                    {
+                                @foreach(var sector in Sectors)
+                        {
+                                <option value="@sector.StockSectorId">@sector.Name</option>
+                        }
+                    }
+                </select>
+              </div>
+            </form>
+        </ChildComponent>
+        <ChildButtonComponent>
+            <button type="button" class="btn btn-primary" @onclick="Create">Simpan</button>
+        </ChildButtonComponent>
+    </Modal>
+}
+@if(IsVisibleModalDelete)
+{
+    <Modal 
+            ModalHeader="Buat Baru"
+            Close="Close"
+            @ref="modal">
+        <ChildComponent >
+            <p>Apakah yakin untuk dihapus?</p>
+        </ChildComponent>
+        <ChildButtonComponent>
+            <button type="button" class="btn btn-danger" @onclick="@(() => Delete(Stock.StockId))">Hapus</button>
+        </ChildButtonComponent>
+    </Modal>
+}
+@if(IsVisibleModalEdit)
+{
+    <Modal 
+            ModalHeader="Edit"
+            Close="Close"
+            @ref="modal">
+        <ChildComponent >
+            <form>
+              <div class="mb-3">
+                <label for="Code" class="col-form-label">Code</label>
+                <input type="text" class="form-control" @bind-value="Stock.Code">
+              </div>
+              <div class="mb-3">
+                <label for="Name" class="col-form-label">Name</label>
+                <input type="text" class="form-control" @bind-value="Stock.Name">
+              </div>
+              <div class="mb-3">
+                <label for="Sector" class="col-form-label">Sector</label>
+                <select class="form-control" id="Sector" @bind="Stock.StockSectorId">
+                    @if(Sectors != null)
+                    {
+                                @foreach(var sector in Sectors)
+                        {
+                                <option value="@sector.StockSectorId">@sector.Name</option>
+                        }
+                    }
+                </select>
+              </div>
+            </form>
+        </ChildComponent>
+        <ChildButtonComponent>
+            <button type="button" class="btn btn-primary" @onclick="Update">Update</button>
+        </ChildButtonComponent>
+    </Modal>
+}
+

@@ -1,0 +1,260 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--LLBLGen Pro v5.9 project file. Do not manually edit this file. Incorrect references could lead to an unloadable project file.-->
+<Project Version="5.9" TargetFrameworkName="LLBLGen Pro Runtime Framework" UseLegacyDefaults="false">
+  <Properties>
+    <Abbreviations />
+    <Property Name="AdditionalTaskPerformerFolder" Value="" />
+    <Property Name="AdditionalTasksFolder" Value="" />
+    <Property Name="AdditionalTemplatesFolder" Value="" />
+    <Property Name="AdditionalTypeConverterFolder" Value="" />
+    <Property Name="AddNewElementsAfterRefresh_v5" Value="false" />
+    <Property Name="AddNewElementsAfterRelationalModelDataSync_v5" Value="false" />
+    <Property Name="AddNewFieldsAfterRefresh_v5" Value="true" />
+    <Property Name="AddNewFieldsAfterRelationalModelDataSync_v5" Value="true" />
+    <Property Name="AddNewViewsAsEntitiesAfterRefresh_v5" Value="false" />
+    <Property Name="AddNewViewsAsEntitiesAfterRelationalModelDataSync_v5" Value="false" />
+    <Property Name="AutoAddManyToManyRelationships" Value="false" />
+    <Property Name="AutoAssignSequencesToIntegerPks" Value="true" />
+    <Property Name="AutoAssignTypeConverterToFieldMapping" Value="true" />
+    <Property Name="AutomaticallyGenerateSourceCodeOnProjectSave" Value="false" />
+    <Property Name="ConnectionStringKeyNamePattern" Value="ConnectionString.{$ProviderName}" />
+    <Property Name="DefaultDDLSQLScriptDestinationFolder" Value=".\DDLSQLScripts" />
+    <Property Name="DefaultDeleteRuleAction" Value="1" />
+    <Property Name="DefaultSourceCodeDestinationFolder" Value=".\Code" />
+    <Property Name="DefaultUpdateRuleAction" Value="0" />
+    <Property Name="DeleteObsoleteFiles" Value="true" />
+    <Property Name="ElementNamePrefixPattern" Value="{$SchemaName}" />
+    <Property Name="ElementNamePrefixPatternIsAppliedWhen" Value="1" />
+    <Property Name="EncodingToUse" Value="0" />
+    <Property Name="EntityActionCombinationDefaultForTable" Value="0" />
+    <Property Name="EntityActionCombinationDefaultForView" Value="4" />
+    <Property Name="EntityFieldNameStripPattern" Value="{}{}" />
+    <Property Name="EntityNameStripPattern" Value="{tbl_}{}" />
+    <Property Name="ExcludableOrphanedElementDetectedAction" Value="3" />
+    <Property Name="FailCodeGenerationOnWriteError" Value="false" />
+    <Property Name="FieldMappedOntoRelatedFieldPattern" Value="{$RelatedFieldName}" />
+    <Property Name="FkFieldsAreNamedAfterTargetField" Value="true" />
+    <Property Name="ForeignKeyConstraintPattern" Value="FK_{$Guid}" />
+    <Property Name="ForeignKeyFieldPattern" Value="{$NavigatorName}{$RelatedFieldName}" />
+    <Property Name="GroupUsage" Value="0" />
+    <Property Name="IdentifyingFieldsFollowDBPrimaryKeyConstraints_v5" Value="true" />
+    <Property Name="InsertUnderscoreAtWordBreakCaseInsensitiveDBs" Value="false" />
+    <Property Name="InsertUnderscoreAtWordBreakCaseSensitiveDBs" Value="false" />
+    <Property Name="LengthPrecisionScaleFollowDBLengthPrecisionScale_v5" Value="true" />
+    <Property Name="MakeElementNamePascalCasing" Value="true" />
+    <Property Name="NavigatorMappedOntoManyToManyPattern" Value="{$EndEntityName}CollectionVia{$IntermediateEntityName$S}" />
+    <Property Name="NavigatorMappedOntoOneManyToOnePattern" Value="{$EndEntityName$S}" />
+    <Property Name="NavigatorMappedOntoOneToManyPattern" Value="{$EndEntityName$P}" />
+    <Property Name="NonExcludableOrphanedElementDetectedAction" Value="3" />
+    <Property Name="PreferDecimalOverCurrencyTypes" Value="true" />
+    <Property Name="PreferNaturalCharacterTypes" Value="true" />
+    <Property Name="PreferSystemSequencesOverSchemaSequencesIfApplicable" Value="true" />
+    <Property Name="PreferVariableLengthTypes" Value="true" />
+    <Property Name="PrimaryKeyConstraintPattern" Value="PK_{$Guid}" />
+    <Property Name="ProjectCreator" Value="Andrew" />
+    <Property Name="ProjectName" Value="Dummy" />
+    <Property Name="ReflectNullabilityOfElementFieldInTargetField_v5" Value="false" />
+    <Property Name="ReflectTypeOfElementFieldInTargetField_v5" Value="true" />
+    <Property Name="RelationalModelDataElementNameCasingCaseInsensitiveDBs" Value="3" />
+    <Property Name="RelationalModelDataElementNameCasingCaseSensitiveDBs" Value="3" />
+    <Property Name="RelationshipsFollowDBForeignKeyConstraints_v5" Value="true" />
+    <Property Name="RemoveUnderscoresFromElementName" Value="true" />
+    <Property Name="RemoveUnmappedElementsAfterRefresh_v5" Value="false" />
+    <Property Name="RemoveUnmappedElementsAfterRelationalModelDataSync_v5" Value="false" />
+    <Property Name="ResetFieldOrderBasedOnTargetOrderAtRefresh" Value="false" />
+    <Property Name="ResetFieldOrderBasedOnTargetOrderAtRelationalModelDataSync" Value="false" />
+    <Property Name="RetrieveDBCustomProperties" Value="false" />
+    <Property Name="RootNamespace" Value="" />
+    <Property Name="SequenceNameMatchingPattern" Value="SEQ_{$TableName}" />
+    <Property Name="SequencePattern" Value="SEQ_{$EntityName}" />
+    <Property Name="SetGroupNameAfterSchemaName" Value="true" />
+    <Property Name="SetSchemaNameAfterGroupName" Value="true" />
+    <Property Name="SingularizeElementNames" Value="true" />
+    <Property Name="StoredProcNameStripPattern" Value="{pr_, sp_}{}" />
+    <Property Name="StoreTimeLastGeneratedIntoProject" Value="false" />
+    <Property Name="StoreTimeLastSyncIntoProject" Value="true" />
+    <Property Name="SyncCustomFieldOrderingWithTableFieldIndex" Value="false" />
+    <Property Name="SyncMappedElementNamesAfterRefresh_v5" Value="false" />
+    <Property Name="SyncMappedElementNamesAfterRelationalModelDataSync_v5" Value="false" />
+    <Property Name="SyncRelationalModelDataElementNameWithModelElementName_v5" Value="false" />
+    <Property Name="SyncRenamedMappedElementNamesAfterRefresh_v5" Value="false" />
+    <Property Name="SyncRenamedMappedElementNamesAfterRelationalModelDataSync_v5" Value="false" />
+    <Property Name="TableValuedFunctionNameStripPattern" Value="{fn_, pr_, sp_}{}" />
+    <Property Name="TargetPerEntityEdgesRequireBackingFkConstraint" Value="true" />
+    <Property Name="TypedViewFieldNameStripPattern" Value="{}{}" />
+    <Property Name="TypedViewMappedOnResultsetPattern" Value="{$ProcFunctionName}{$ResultsetName}Result" />
+    <Property Name="TypedViewNameStripPattern" Value="{vw_}{}" />
+    <Property Name="UniqueConstraintPattern" Value="UC_{$Guid}" />
+    <Property Name="UniqueConstraintsFollowDBUniqueConstraints_v5" Value="true" />
+    <Property Name="UpdateCustomPropertiesAfterRefresh_v5" Value="false" />
+    <Property Name="UpdateCustomPropertiesAfterRelationalModelDataSync_v5" Value="false" />
+    <Property Name="UseCustomFieldOrderingOnNewElements" Value="false" />
+  </Properties>
+  <TypeShortcuts />
+  <IgnoredWarnings />
+  <SavedSearchQueries />
+  <CodeGenerationCyclePreferences>
+    <OutputType Value="3">
+      <LastUsedPreferences>
+        <DestinationRootFolder Value="E:\Blazor\Dummy\Dummy_Data" />
+        <FrameworkName Value="LLBLGen Pro Runtime Framework" />
+        <LanguageName Value="C#" />
+        <PlatformName Value=".NET 4.8.0" />
+        <PresetName Value="SD.Presets.Adapter.General" />
+        <RootNamespace Value="Dummy" />
+        <TemplateGroup Value="Adapter" />
+        <TemplateBindings>
+          <Binding Name="SD.TemplateBindings.SharedTemplates.Deprecated" />
+          <Binding Name="SD.TemplateBindings.SharedTemplates.NET45x" />
+          <Binding Name="SD.TemplateBindings.SharedTemplates" />
+          <Binding Name="SD.TemplateBindings.SqlServerSpecific" />
+          <Binding Name="SD.TemplateBindings.General" />
+        </TemplateBindings>
+        <AdhocTemplateSets />
+      </LastUsedPreferences>
+    </OutputType>
+  </CodeGenerationCyclePreferences>
+  <CodeGenerationMetaDataDefaults>
+    <TargetElement Type="256">
+      <Defaults>
+        <Attributes>
+          <Attribute Value="Browsable($false)" />
+        </Attributes>
+      </Defaults>
+    </TargetElement>
+  </CodeGenerationMetaDataDefaults>
+  <EntityModel>
+    <ValueTypeDefinitions />
+    <EntityDefinitions>
+      <EntityDefinition Name="Stock" GroupName="Dbo" ObjectID="56e0eba4-0d63-45bd-899b-60ee7ae8423e">
+        <Fields>
+          <Field Name="Code" Type="string" MaxLength="2147483647" />
+          <Field Name="CreatedDate" Type="datetime" Precision="7" />
+          <Field Name="Name" Type="string" MaxLength="2147483647" />
+          <Field Name="StockId" Type="int" IsReadOnly="true" Precision="10" IsPrimaryKey="true" />
+          <Field Name="StockSectorId" Type="int" Precision="10" />
+          <Field Name="UpdateDate" Type="datetime" Precision="7" />
+        </Fields>
+      </EntityDefinition>
+      <EntityDefinition Name="StockSector" GroupName="Dbo" ObjectID="2d6aa856-46c9-4358-a863-95eb3498f5ec">
+        <Fields>
+          <Field Name="Code" Type="string" MaxLength="50" />
+          <Field Name="CreateDate" Type="datetime" Precision="7" />
+          <Field Name="Name" Type="string" MaxLength="100" />
+          <Field Name="StockSectorId" Type="int" IsReadOnly="true" Precision="10" IsPrimaryKey="true" />
+          <Field Name="UpdateDate" Type="datetime" Precision="7" />
+        </Fields>
+      </EntityDefinition>
+    </EntityDefinitions>
+    <Relationships>
+      <NormalRelationship Name="Dbo.Stock.StockSector-Dbo.StockSector.Stocks" Start="Dbo:Stock" End="Dbo:StockSector" StartNavigator="StockSector" EndNavigator="Stocks" Type="4">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="StockSectorId" PkField="StockSectorId" />
+        </FieldRelationships>
+      </NormalRelationship>
+    </Relationships>
+    <InheritanceHierarchies />
+  </EntityModel>
+  <TypedListDefinitions>
+    <TypedListDefinition Name="StockTypedList" GroupName="Dbo">
+      <EntityAliases>
+        <EntityAlias Entity="Dbo:Stock" />
+        <EntityAlias Entity="Dbo:StockSector" />
+      </EntityAliases>
+      <Fields>
+        <Field FieldAlias="StockId" TargetField="Dbo.Stock.StockId" />
+        <Field FieldAlias="Code" TargetField="Dbo.Stock.Code" />
+        <Field FieldAlias="Name" TargetField="Dbo.Stock.Name" />
+        <Field FieldAlias="StockSectorId" TargetField="Dbo.Stock.StockSectorId" />
+        <Field FieldAlias="Code1" Caption="Code" TargetField="Dbo.StockSector.Code" />
+        <Field FieldAlias="Name1" Caption="Name" TargetField="Dbo.StockSector.Name" />
+      </Fields>
+      <Relationships>
+        <Relationship Name="Dbo.Stock.StockSector-Dbo.StockSector.Stocks" StartAlias="Dbo.StockSector" EndAlias="Dbo.Stock" JoinHint="1" />
+      </Relationships>
+    </TypedListDefinition>
+  </TypedListDefinitions>
+  <TargetDatabases>
+    <TargetDatabase Type="2D18D138-1DD2-467E-86CC-4838250611AE" SyncSource="2">
+      <ConnectionElements>
+        <ConnectionElement Name="ServerName" Value="localhost" />
+        <ConnectionElement Name="CatalogName" Value="master" />
+        <ConnectionElement Name="UseWindowsAuthentication" Value="true" />
+        <ConnectionElement Name="UserID" Value="" />
+        <ConnectionElement Name="Password" Value="" />
+      </ConnectionElements>
+      <SystemSequences>
+        <Sequence Name="SCOPE_IDENTITY()" />
+        <Sequence Name="@@IDENTITY" />
+      </SystemSequences>
+      <Catalogs>
+        <Catalog Name="Dummy" SyncSource="2">
+          <Schemas>
+            <Schema Name="dbo" SyncSource="2" LastSyncWithDatabase="2022-04-26T02:44:13.4146828Z">
+              <Tables>
+                <Table Name="Stock">
+                  <PkConstraintName Name="PK_Stocks" />
+                  <Fields>
+                    <Field Name="StockId" Ordinal="1" IsIdentity="true" IsPrimaryKey="true" DbType="8" Precision="10" />
+                    <Field Name="Code" Ordinal="2" DbType="12" Length="2147483647" />
+                    <Field Name="Name" Ordinal="3" DbType="12" Length="2147483647" />
+                    <Field Name="StockSectorId" Ordinal="4" DbType="8" Precision="10" />
+                    <Field Name="CreatedDate" Ordinal="5" HasDefaultValue="true" DefaultValue="sysdatetime()" DbType="29" Precision="7" />
+                    <Field Name="UpdateDate" Ordinal="6" DbType="29" Precision="7" />
+                  </Fields>
+                </Table>
+                <Table Name="StockSector">
+                  <PkConstraintName Name="PK_StockSector" />
+                  <Fields>
+                    <Field Name="StockSectorId" Ordinal="1" IsIdentity="true" IsPrimaryKey="true" DbType="8" Precision="10" />
+                    <Field Name="Code" Ordinal="2" DbType="12" Length="50" />
+                    <Field Name="Name" Ordinal="3" DbType="12" Length="100" />
+                    <Field Name="CreateDate" Ordinal="4" HasDefaultValue="true" DefaultValue="sysdatetime()" DbType="29" Precision="7" />
+                    <Field Name="UpdateDate" Ordinal="5" DbType="29" Precision="7" />
+                  </Fields>
+                </Table>
+              </Tables>
+            </Schema>
+          </Schemas>
+          <ForeignKeyConstraints>
+            <ForeignKeyConstraint Name="dbo:Stock:FK_Stocks_StockSector">
+              <FieldPairs>
+                <FieldPair PkField="dbo:StockSector:StockSectorId" FkField="dbo:Stock:StockSectorId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+          </ForeignKeyConstraints>
+        </Catalog>
+      </Catalogs>
+    </TargetDatabase>
+  </TargetDatabases>
+  <MappingStores>
+    <MappingStore Type="2D18D138-1DD2-467E-86CC-4838250611AE">
+      <EntityMappings>
+        <EntityMapping EntityName="Dbo:Stock" TargetName="Dummy:dbo:Stock">
+          <FieldMappings>
+            <FieldMapping FieldName="Code" TargetFieldName="Code" />
+            <FieldMapping FieldName="CreatedDate" TargetFieldName="CreatedDate" />
+            <FieldMapping FieldName="Name" TargetFieldName="Name" />
+            <FieldMapping FieldName="StockId" TargetFieldName="StockId" SequenceToUse="SCOPE_IDENTITY()" />
+            <FieldMapping FieldName="StockSectorId" TargetFieldName="StockSectorId" />
+            <FieldMapping FieldName="UpdateDate" TargetFieldName="UpdateDate" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName="Dbo:StockSector" TargetName="Dummy:dbo:StockSector">
+          <FieldMappings>
+            <FieldMapping FieldName="Code" TargetFieldName="Code" />
+            <FieldMapping FieldName="CreateDate" TargetFieldName="CreateDate" />
+            <FieldMapping FieldName="Name" TargetFieldName="Name" />
+            <FieldMapping FieldName="StockSectorId" TargetFieldName="StockSectorId" SequenceToUse="SCOPE_IDENTITY()" />
+            <FieldMapping FieldName="UpdateDate" TargetFieldName="UpdateDate" />
+          </FieldMappings>
+        </EntityMapping>
+      </EntityMappings>
+      <TypedViewMappings />
+      <SPCallMappings />
+      <TvfCallMappings />
+      <TypeConversionDefinitions />
+    </MappingStore>
+  </MappingStores>
+  <ModelViews />
+</Project>
