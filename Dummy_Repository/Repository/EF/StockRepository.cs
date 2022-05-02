@@ -26,9 +26,6 @@ namespace Dummy.Repository
         {
             var obj = _mapper.Map<StockDTO, Stock>(objDTO);
 
-            obj.CreatedDate = DateTime.Now;
-            obj.UpdateDate = DateTime.Now;
-
             var addedObj = _db.Stocks.Add(obj);
 
             await _db.SaveChangesAsync();

@@ -13,6 +13,7 @@ namespace Dummy_Data.Model
         public int StockSectorId { get; set; }
         public string Code { get; set; } = null!;
         public string Name { get; set; } = null!;
+        public bool? IsActive { get; set; }
         public DateTime CreateDate { get; set; }
         public DateTime UpdateDate { get; set; }
 

@@ -39,6 +39,24 @@ public class StockDTO
     /// </value>
     public int StockSectorId { get; set; }
 
+
+
+    /// <summary>
+    /// Gets or sets the release date.
+    /// </summary>
+    /// <value>
+    /// The release date.
+    /// </value>
+    public DateTime ReleaseDate { get; set; }
+
+    /// <summary>
+    /// Gets or sets the total share.
+    /// </summary>
+    /// <value>
+    /// The total share.
+    /// </value>
+    public long TotalShare { get; set; }
+
     /// <summary>
     /// Gets or sets a value indicating whether this instance is active.
     /// </summary>

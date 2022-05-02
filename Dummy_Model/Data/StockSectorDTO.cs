@@ -11,4 +11,8 @@ public class StockSectorDTO
 
     [Required]
     public string Name { get; set; } = null!;
+
+    public DateTime ReleaseDate { get; set; }
+
+    public long TotalShare { get; set; }
 }
