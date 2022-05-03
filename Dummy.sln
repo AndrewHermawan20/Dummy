@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DummyWeb_Server", "DummyWeb
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dummy_Model", "Dummy_Model\Dummy_Model.csproj", "{A13E6BCE-E228-40EC-BE44-EABEB85DF100}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dummy_Service", "Dummy_Service\Dummy_Service.csproj", "{C0C57075-C3D6-41D9-BAAF-113970DC2648}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{A13E6BCE-E228-40EC-BE44-EABEB85DF100}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A13E6BCE-E228-40EC-BE44-EABEB85DF100}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A13E6BCE-E228-40EC-BE44-EABEB85DF100}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0C57075-C3D6-41D9-BAAF-113970DC2648}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0C57075-C3D6-41D9-BAAF-113970DC2648}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0C57075-C3D6-41D9-BAAF-113970DC2648}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0C57075-C3D6-41D9-BAAF-113970DC2648}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -114,6 +114,27 @@
       </LastUsedPreferences>
     </OutputType>
   </CodeGenerationCyclePreferences>
+  <OutputSettingValues>
+    <SettingValues>
+      <SettingValue Name="1:AdapterDbGenericSubFolderName" Value="DatabaseGeneric" Type="18" />
+      <SettingValue Name="1:AdapterDbSpecificNamespaceSuffix" Value="DatabaseSpecific" Type="18" />
+      <SettingValue Name="1:AdapterDbSpecificProjectFileSuffix" Value="DBSpecific" Type="18" />
+      <SettingValue Name="1:AdapterDbSpecificSubFolderName" Value="DatabaseSpecific" Type="18" />
+      <SettingValue Name="1:ConvertNulledReferenceTypesToDefaultValue" Value="true" Type="3" />
+      <SettingValue Name="1:EntityBaseClassNameDefault" Value="CommonEntityBase" Type="18" />
+      <SettingValue Name="1:FieldPropertyIsPublicDefault" Value="true" Type="3" />
+      <SettingValue Name="1:GenerateAsNullableTypeDefault" Value="true" Type="3" />
+      <SettingValue Name="1:GenerateEntityFieldFactory" Value="false" Type="3" />
+      <SettingValue Name="1:GenerateEntityFieldsFactory" Value="false" Type="3" />
+      <SettingValue Name="1:InlineValueTypedFields" Value="true" Type="3" />
+      <SettingValue Name="1:LazyLoadingWithoutResultReturnsNew" Value="false" Type="3" />
+      <SettingValue Name="1:NavigatorPropertyIsPublicDefault" Value="true" Type="3" />
+      <SettingValue Name="1:SupportedActionCombinations" Value="0,1,2,3,4,5,6,7" Type="18" />
+      <SettingValue Name="1:TdlEmitTimeDateInOutputFiles" Value="false" Type="3" />
+      <SettingValue Name="1:TypedListOutputTypeDefault" Value="PocoWithQuerySpecQuery" Type="18" />
+      <SettingValue Name="1:TypedViewOutputTypeDefault" Value="PocoWithQuerySpecQuery" Type="18" />
+    </SettingValues>
+  </OutputSettingValues>
   <CodeGenerationMetaDataDefaults>
     <TargetElement Type="256">
       <Defaults>
@@ -126,30 +147,215 @@
   <EntityModel>
     <ValueTypeDefinitions />
     <EntityDefinitions>
+      <EntityDefinition Name="Configuration" GroupName="Dbo" ObjectID="7a726139-7081-4fe6-a5f8-9a8405a97d6b">
+        <Fields>
+          <Field Name="ConfigurationId" Type="int" IsReadOnly="true" Precision="10" IsPrimaryKey="true" />
+          <Field Name="CreateDate" Type="datetime" Precision="7" />
+          <Field Name="Name" Type="string" MaxLength="100" />
+          <Field Name="UpdateDate" Type="datetime" Precision="7" />
+          <Field Name="Value" Type="string" MaxLength="100" />
+          <Field Name="Version" Type="int" Precision="10" />
+        </Fields>
+      </EntityDefinition>
+      <EntityDefinition Name="OrderHistory" GroupName="Dbo" ObjectID="49c4b8c9-a68f-45a9-b0ae-4b5fbf2d2a0a">
+        <Fields>
+          <Field Name="Amount" Type="decimal" Precision="19" Scale="4" />
+          <Field Name="CancelDate" Type="datetime" IsOptional="true" Precision="7" />
+          <Field Name="CreateDate" Type="datetime" Precision="7" />
+          <Field Name="OrderDate" Type="datetime" Precision="7" />
+          <Field Name="OrderHistoryId" Type="long" IsReadOnly="true" Precision="19" IsPrimaryKey="true" />
+          <Field Name="OrderTypeId" Type="short" Precision="5" />
+          <Field Name="UpdateDate" Type="datetime" Precision="7" />
+        </Fields>
+      </EntityDefinition>
+      <EntityDefinition Name="OrderType" GroupName="Dbo" ObjectID="3a8d0992-b6b2-4d5c-b48f-9a3a1a088f14">
+        <Fields>
+          <Field Name="Code" Type="string" MaxLength="50" />
+          <Field Name="CreateDate" Type="datetime" Precision="7" />
+          <Field Name="Name" Type="string" MaxLength="50" />
+          <Field Name="OrderTypeId" Type="short" IsReadOnly="true" Precision="5" IsPrimaryKey="true" />
+        </Fields>
+      </EntityDefinition>
+      <EntityDefinition Name="Portofolio" GroupName="Dbo" ObjectID="c04cb22a-b6ff-474b-aa20-8d3307820ff6">
+        <Fields>
+          <Field Name="Cash" Type="decimal" Precision="19" Scale="4" />
+          <Field Name="CreateDate" Type="datetime" Precision="7" />
+          <Field Name="PortofolioId" Type="int" Precision="10" IsPrimaryKey="true" />
+          <Field Name="UpdateDate" Type="datetime" Precision="7" />
+          <Field Name="UserId" Type="int" IsReadOnly="true" Precision="10" />
+          <Field Name="Value" Type="decimal" Precision="19" Scale="4" />
+        </Fields>
+      </EntityDefinition>
+      <EntityDefinition Name="PortofolioItem" GroupName="Dbo" ObjectID="13213127-7552-4dbf-a5e8-4a6b5f99a71b">
+        <Fields>
+          <Field Name="AverageValue" Type="decimal" Precision="19" Scale="4" />
+          <Field Name="CreateDate" Type="datetime" Precision="7" />
+          <Field Name="Lot" Type="long" Precision="19" />
+          <Field Name="PortofolioId" Type="int" Precision="10" />
+          <Field Name="PortofolioItemId" Type="long" IsReadOnly="true" Precision="19" IsPrimaryKey="true" />
+          <Field Name="Shared" Type="long" Precision="19" />
+          <Field Name="StockId" Type="int" Precision="10" />
+          <Field Name="TotalValue" Type="decimal" Precision="19" Scale="4" />
+          <Field Name="UpdateDate" Type="datetime" Precision="7" />
+          <Field Name="Version" Type="long" Precision="19" />
+        </Fields>
+      </EntityDefinition>
       <EntityDefinition Name="Stock" GroupName="Dbo" ObjectID="56e0eba4-0d63-45bd-899b-60ee7ae8423e">
         <Fields>
           <Field Name="Code" Type="string" MaxLength="2147483647" />
           <Field Name="CreatedDate" Type="datetime" Precision="7" />
+          <Field Name="IsActive" Type="bool" />
           <Field Name="Name" Type="string" MaxLength="2147483647" />
+          <Field Name="ReleaseDate" Type="datetime" IsOptional="true" />
           <Field Name="StockId" Type="int" IsReadOnly="true" Precision="10" IsPrimaryKey="true" />
           <Field Name="StockSectorId" Type="int" Precision="10" />
+          <Field Name="TotalShare" Type="long" IsOptional="true" Precision="19" />
           <Field Name="UpdateDate" Type="datetime" Precision="7" />
         </Fields>
       </EntityDefinition>
       <EntityDefinition Name="StockSector" GroupName="Dbo" ObjectID="2d6aa856-46c9-4358-a863-95eb3498f5ec">
         <Fields>
-          <Field Name="Code" Type="string" MaxLength="50" />
+          <Field Name="Code" Type="string" MaxLength="100" />
           <Field Name="CreateDate" Type="datetime" Precision="7" />
-          <Field Name="Name" Type="string" MaxLength="100" />
+          <Field Name="IsActive" Type="bool" />
+          <Field Name="Name" Type="string" MaxLength="500" />
           <Field Name="StockSectorId" Type="int" IsReadOnly="true" Precision="10" IsPrimaryKey="true" />
           <Field Name="UpdateDate" Type="datetime" Precision="7" />
         </Fields>
       </EntityDefinition>
+      <EntityDefinition Name="Summary" GroupName="Dbo" ObjectID="2bec4b14-045d-454e-a253-79ce36e48f3d">
+        <Fields>
+          <Field Name="AdjustmentCurrentCash" Type="decimal" IsOptional="true" Precision="19" Scale="4" />
+          <Field Name="CapitalGain" Type="decimal" IsOptional="true" Precision="19" Scale="4" />
+          <Field Name="CapitalLoss" Type="decimal" IsOptional="true" Precision="19" Scale="4" />
+          <Field Name="CreateDate" Type="datetime" Precision="7" />
+          <Field Name="CurrentCash" Type="decimal" IsOptional="true" Precision="19" Scale="4" />
+          <Field Name="Deviden" Type="decimal" IsOptional="true" Precision="19" Scale="4" />
+          <Field Name="LoanInterest" Type="decimal" IsOptional="true" Precision="19" Scale="4" />
+          <Field Name="MateraiFee" Type="decimal" IsOptional="true" Precision="19" Scale="4" />
+          <Field Name="SummaryDate" Type="datetime" Precision="7" />
+          <Field Name="SummaryId" Type="long" IsReadOnly="true" Precision="19" IsPrimaryKey="true" />
+          <Field Name="TotalBuyNetAmount" Type="decimal" IsOptional="true" Precision="19" Scale="4" />
+          <Field Name="TotalSellNetAmount" Type="decimal" IsOptional="true" Precision="19" Scale="4" />
+          <Field Name="Transfer" Type="decimal" IsOptional="true" Precision="19" Scale="4" />
+          <Field Name="UpdateDate" Type="datetime" Precision="7" />
+          <Field Name="UserId" Type="int" Precision="10" />
+          <Field Name="Version" Type="int" Precision="10" />
+          <Field Name="Withdraw" Type="decimal" IsOptional="true" Precision="19" Scale="4" />
+        </Fields>
+      </EntityDefinition>
+      <EntityDefinition Name="Transaction" GroupName="Dbo" ObjectID="11e4932a-edbe-45bd-ab44-2757abb9b680">
+        <Fields>
+          <Field Name="BuyTransactionId" Type="long" IsOptional="true" Precision="19" />
+          <Field Name="CancelDate" Type="datetime" IsOptional="true" Precision="7" />
+          <Field Name="CreateDate" Type="datetime" Precision="7" />
+          <Field Name="GrossAmount" Type="string" MaxLength="10" />
+          <Field Name="IsSellFirst" Type="bool" />
+          <Field Name="Lot" Type="long" Precision="19" />
+          <Field Name="NetAmount" Type="decimal" Precision="19" Scale="4" />
+          <Field Name="Price" Type="decimal" Precision="19" Scale="4" />
+          <Field Name="SellTransactionId" Type="long" IsOptional="true" Precision="19" />
+          <Field Name="Shared" Type="long" Precision="19" />
+          <Field Name="StockId" Type="int" Precision="10" />
+          <Field Name="TransactionDate" Type="datetime" Precision="7" />
+          <Field Name="TransactionFee" Type="decimal" Precision="19" Scale="4" />
+          <Field Name="TransactionId" Type="long" IsReadOnly="true" Precision="19" IsPrimaryKey="true" />
+          <Field Name="TransactionStatusId" Type="short" Precision="5" />
+          <Field Name="TransactionTypeId" Type="short" Precision="5" />
+          <Field Name="UpdateDate" Type="datetime" Precision="7" />
+          <Field Name="UserId" Type="int" Precision="10" />
+          <Field Name="Version" Type="long" Precision="19" />
+        </Fields>
+      </EntityDefinition>
+      <EntityDefinition Name="TransactionStatus" GroupName="Dbo" ObjectID="0290704f-737e-4257-b12a-474650e08117">
+        <Fields>
+          <Field Name="Code" Type="string" MaxLength="50" />
+          <Field Name="CreateDate" Type="datetime" Precision="7" />
+          <Field Name="Name" Type="string" MaxLength="50" />
+          <Field Name="TransactionStatusId" Type="short" IsReadOnly="true" Precision="5" IsPrimaryKey="true" />
+          <Field Name="Version" Type="int" Precision="10" />
+        </Fields>
+      </EntityDefinition>
+      <EntityDefinition Name="TransactionType" GroupName="Dbo" ObjectID="1dd69ebd-3958-4571-b33e-a62b80e6d9a6">
+        <Fields>
+          <Field Name="Code" Type="string" MaxLength="50" />
+          <Field Name="CreateDate" Type="datetime" Precision="7" />
+          <Field Name="Name" Type="string" MaxLength="50" />
+          <Field Name="TransactionTypeId" Type="short" IsReadOnly="true" Precision="5" IsPrimaryKey="true" />
+          <Field Name="Version" Type="int" Precision="10" />
+        </Fields>
+      </EntityDefinition>
+      <EntityDefinition Name="User" GroupName="Dbo" ObjectID="3dedf6f9-c756-4aed-bc20-6a45ffdaa7e1">
+        <Fields>
+          <Field Name="CreateDate" Type="datetime" Precision="7" />
+          <Field Name="Name" Type="string" MaxLength="200" />
+          <Field Name="Password" Type="string" MaxLength="200" />
+          <Field Name="UpdateDate" Type="datetime" Precision="7" />
+          <Field Name="UserId" Type="int" IsReadOnly="true" Precision="10" IsPrimaryKey="true" />
+          <Field Name="UserName" Type="string" MaxLength="200" />
+          <Field Name="Version" Type="long" Precision="19" />
+        </Fields>
+      </EntityDefinition>
     </EntityDefinitions>
     <Relationships>
+      <NormalRelationship Name="Dbo.OrderHistory.OrderType-Dbo.OrderType.OrderHistories" Start="Dbo:OrderHistory" End="Dbo:OrderType" StartNavigator="OrderType" EndNavigator="OrderHistories" Type="4">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="OrderTypeId" PkField="OrderTypeId" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="Dbo.Portofolio.User-Dbo.User.Portofolios" Start="Dbo:Portofolio" End="Dbo:User" StartNavigator="User" EndNavigator="Portofolios" Type="4">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="UserId" PkField="UserId" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="Dbo.PortofolioItem.Portofolio-Dbo.Portofolio.PortofolioItems" Start="Dbo:PortofolioItem" End="Dbo:Portofolio" StartNavigator="Portofolio" EndNavigator="PortofolioItems" Type="4">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="PortofolioId" PkField="PortofolioId" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="Dbo.PortofolioItem.Stock-Dbo.Stock.PortofolioItems" Start="Dbo:PortofolioItem" End="Dbo:Stock" StartNavigator="Stock" EndNavigator="PortofolioItems" Type="4">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="StockId" PkField="StockId" />
+        </FieldRelationships>
+      </NormalRelationship>
       <NormalRelationship Name="Dbo.Stock.StockSector-Dbo.StockSector.Stocks" Start="Dbo:Stock" End="Dbo:StockSector" StartNavigator="StockSector" EndNavigator="Stocks" Type="4">
         <FieldRelationships>
           <FieldFieldRelationship FkField="StockSectorId" PkField="StockSectorId" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="Dbo.Summary.User-Dbo.User.Summaries" Start="Dbo:Summary" End="Dbo:User" StartNavigator="User" EndNavigator="Summaries" Type="4">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="UserId" PkField="UserId" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="Dbo.Transaction.Stock-Dbo.Stock.Transactions" Start="Dbo:Transaction" End="Dbo:Stock" StartNavigator="Stock" EndNavigator="Transactions" Type="4">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="StockId" PkField="StockId" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="Dbo.Transaction.Transaction-Dbo.Transaction.Transactions" Start="Dbo:Transaction" End="Dbo:Transaction" StartNavigator="Transaction" EndNavigator="Transactions" Type="4" EndIsOptional="true">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="BuyTransactionId" PkField="TransactionId" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="Dbo.Transaction.Transaction1-Dbo.Transaction.Transactions1" Start="Dbo:Transaction" End="Dbo:Transaction" StartNavigator="Transaction1" EndNavigator="Transactions1" Type="4" EndIsOptional="true">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="SellTransactionId" PkField="TransactionId" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="Dbo.Transaction.TransactionStatus-Dbo.TransactionStatus.Transactions" Start="Dbo:Transaction" End="Dbo:TransactionStatus" StartNavigator="TransactionStatus" EndNavigator="Transactions" Type="4">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="TransactionStatusId" PkField="TransactionStatusId" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="Dbo.Transaction.TransactionType-Dbo.TransactionType.Transactions" Start="Dbo:Transaction" End="Dbo:TransactionType" StartNavigator="TransactionType" EndNavigator="Transactions" Type="4">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="TransactionTypeId" PkField="TransactionTypeId" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="Dbo.Transaction.User-Dbo.User.Transactions" Start="Dbo:Transaction" End="Dbo:User" StartNavigator="User" EndNavigator="Transactions" Type="4">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="UserId" PkField="UserId" />
         </FieldRelationships>
       </NormalRelationship>
     </Relationships>
@@ -188,10 +394,68 @@
         <Sequence Name="@@IDENTITY" />
       </SystemSequences>
       <Catalogs>
-        <Catalog Name="Dummy" SyncSource="2">
+        <Catalog Name="Dummy">
           <Schemas>
-            <Schema Name="dbo" SyncSource="2" LastSyncWithDatabase="2022-04-26T02:44:13.4146828Z">
+            <Schema Name="dbo" SyncSource="2" LastSyncWithDatabase="2022-05-03T01:39:06.4816601Z">
               <Tables>
+                <Table Name="Configuration">
+                  <PkConstraintName Name="PK_Configurtion" />
+                  <Fields>
+                    <Field Name="ConfigurationId" Ordinal="1" IsIdentity="true" IsPrimaryKey="true" DbType="8" Precision="10" />
+                    <Field Name="Name" Ordinal="2" DbType="12" Length="100" />
+                    <Field Name="Value" Ordinal="3" DbType="12" Length="100" />
+                    <Field Name="CreateDate" Ordinal="4" HasDefaultValue="true" DefaultValue="sysdatetime()" DbType="29" Precision="7" />
+                    <Field Name="UpdateDate" Ordinal="5" HasDefaultValue="true" DefaultValue="sysdatetime()" DbType="29" Precision="7" />
+                    <Field Name="Version" Ordinal="6" HasDefaultValue="true" DefaultValue="1" DbType="8" Precision="10" />
+                  </Fields>
+                </Table>
+                <Table Name="OrderHistory">
+                  <PkConstraintName Name="PK_OrderHistory" />
+                  <Fields>
+                    <Field Name="OrderHistoryId" Ordinal="1" IsIdentity="true" IsPrimaryKey="true" DbType="0" Precision="19" />
+                    <Field Name="OrderTypeId" Ordinal="2" DbType="16" Precision="5" />
+                    <Field Name="OrderDate" Ordinal="3" HasDefaultValue="true" DefaultValue="sysdatetime()" DbType="29" Precision="7" />
+                    <Field Name="Amount" Ordinal="4" DbType="9" Precision="19" Scale="4" />
+                    <Field Name="CancelDate" Ordinal="5" IsOptional="true" DbType="29" Precision="7" />
+                    <Field Name="CreateDate" Ordinal="6" HasDefaultValue="true" DefaultValue="sysdatetime()" DbType="29" Precision="7" />
+                    <Field Name="UpdateDate" Ordinal="7" HasDefaultValue="true" DefaultValue="sysdatetime()" DbType="29" Precision="7" />
+                  </Fields>
+                </Table>
+                <Table Name="OrderType">
+                  <PkConstraintName Name="PK_OrderType" />
+                  <Fields>
+                    <Field Name="OrderTypeId" Ordinal="1" IsIdentity="true" IsPrimaryKey="true" DbType="16" Precision="5" />
+                    <Field Name="Code" Ordinal="2" DbType="12" Length="50" />
+                    <Field Name="Name" Ordinal="3" DbType="12" Length="50" />
+                    <Field Name="CreateDate" Ordinal="4" HasDefaultValue="true" DefaultValue="sysdatetime()" DbType="29" Precision="7" />
+                  </Fields>
+                </Table>
+                <Table Name="Portofolio">
+                  <PkConstraintName Name="PK_Portofolio" />
+                  <Fields>
+                    <Field Name="PortofolioId" Ordinal="1" IsPrimaryKey="true" DbType="8" Precision="10" />
+                    <Field Name="UserId" Ordinal="2" IsIdentity="true" DbType="8" Precision="10" />
+                    <Field Name="Value" Ordinal="3" DbType="9" Precision="19" Scale="4" />
+                    <Field Name="Cash" Ordinal="4" DbType="9" Precision="19" Scale="4" />
+                    <Field Name="CreateDate" Ordinal="5" HasDefaultValue="true" DefaultValue="sysdatetime()" DbType="29" Precision="7" />
+                    <Field Name="UpdateDate" Ordinal="6" HasDefaultValue="true" DefaultValue="sysdatetime()" DbType="29" Precision="7" />
+                  </Fields>
+                </Table>
+                <Table Name="PortofolioItem">
+                  <PkConstraintName Name="PK_PortofolioItem" />
+                  <Fields>
+                    <Field Name="PortofolioItemId" Ordinal="1" IsIdentity="true" IsPrimaryKey="true" DbType="0" Precision="19" />
+                    <Field Name="PortofolioId" Ordinal="2" DbType="8" Precision="10" />
+                    <Field Name="StockId" Ordinal="3" DbType="8" Precision="10" />
+                    <Field Name="Lot" Ordinal="4" DbType="0" Precision="19" />
+                    <Field Name="Shared" Ordinal="5" DbType="0" Precision="19" />
+                    <Field Name="AverageValue" Ordinal="6" DbType="9" Precision="19" Scale="4" />
+                    <Field Name="TotalValue" Ordinal="7" DbType="9" Precision="19" Scale="4" />
+                    <Field Name="CreateDate" Ordinal="8" HasDefaultValue="true" DefaultValue="sysdatetime()" DbType="29" Precision="7" />
+                    <Field Name="UpdateDate" Ordinal="9" HasDefaultValue="true" DefaultValue="sysdatetime()" DbType="29" Precision="7" />
+                    <Field Name="Version" Ordinal="10" HasDefaultValue="true" DefaultValue="1" DbType="0" Precision="19" />
+                  </Fields>
+                </Table>
                 <Table Name="Stock">
                   <PkConstraintName Name="PK_Stocks" />
                   <Fields>
@@ -199,27 +463,164 @@
                     <Field Name="Code" Ordinal="2" DbType="12" Length="2147483647" />
                     <Field Name="Name" Ordinal="3" DbType="12" Length="2147483647" />
                     <Field Name="StockSectorId" Ordinal="4" DbType="8" Precision="10" />
-                    <Field Name="CreatedDate" Ordinal="5" HasDefaultValue="true" DefaultValue="sysdatetime()" DbType="29" Precision="7" />
-                    <Field Name="UpdateDate" Ordinal="6" DbType="29" Precision="7" />
+                    <Field Name="ReleaseDate" Ordinal="5" IsOptional="true" DbType="28" />
+                    <Field Name="TotalShare" Ordinal="6" IsOptional="true" DbType="0" Precision="19" />
+                    <Field Name="IsActive" Ordinal="7" HasDefaultValue="true" DefaultValue="1" DbType="2" />
+                    <Field Name="CreatedDate" Ordinal="8" HasDefaultValue="true" DefaultValue="sysdatetime()" DbType="29" Precision="7" />
+                    <Field Name="UpdateDate" Ordinal="9" HasDefaultValue="true" DefaultValue="sysdatetime()" DbType="29" Precision="7" />
                   </Fields>
                 </Table>
                 <Table Name="StockSector">
                   <PkConstraintName Name="PK_StockSector" />
                   <Fields>
                     <Field Name="StockSectorId" Ordinal="1" IsIdentity="true" IsPrimaryKey="true" DbType="8" Precision="10" />
+                    <Field Name="Code" Ordinal="2" DbType="12" Length="100" />
+                    <Field Name="Name" Ordinal="3" DbType="12" Length="500" />
+                    <Field Name="IsActive" Ordinal="4" HasDefaultValue="true" DefaultValue="1" DbType="2" />
+                    <Field Name="CreateDate" Ordinal="5" HasDefaultValue="true" DefaultValue="sysdatetime()" DbType="29" Precision="7" />
+                    <Field Name="UpdateDate" Ordinal="6" HasDefaultValue="true" DefaultValue="sysdatetime()" DbType="29" Precision="7" />
+                  </Fields>
+                </Table>
+                <Table Name="Summary">
+                  <PkConstraintName Name="PK_Summary" />
+                  <Fields>
+                    <Field Name="SummaryId" Ordinal="1" IsIdentity="true" IsPrimaryKey="true" DbType="0" Precision="19" />
+                    <Field Name="SummaryDate" Ordinal="2" DbType="29" Precision="7" />
+                    <Field Name="UserId" Ordinal="3" DbType="8" Precision="10" />
+                    <Field Name="TotalBuyNetAmount" Ordinal="4" IsOptional="true" DbType="9" Precision="19" Scale="4" />
+                    <Field Name="TotalSellNetAmount" Ordinal="5" IsOptional="true" DbType="9" Precision="19" Scale="4" />
+                    <Field Name="MateraiFee" Ordinal="6" IsOptional="true" DbType="9" Precision="19" Scale="4" />
+                    <Field Name="Deviden" Ordinal="7" IsOptional="true" DbType="9" Precision="19" Scale="4" />
+                    <Field Name="LoanInterest" Ordinal="8" IsOptional="true" DbType="9" Precision="19" Scale="4" />
+                    <Field Name="CapitalGain" Ordinal="9" IsOptional="true" DbType="9" Precision="19" Scale="4" />
+                    <Field Name="CapitalLoss" Ordinal="10" IsOptional="true" DbType="9" Precision="19" Scale="4" />
+                    <Field Name="Transfer" Ordinal="11" IsOptional="true" DbType="9" Precision="19" Scale="4" />
+                    <Field Name="Withdraw" Ordinal="12" IsOptional="true" DbType="9" Precision="19" Scale="4" />
+                    <Field Name="CurrentCash" Ordinal="13" IsOptional="true" DbType="9" Precision="19" Scale="4" />
+                    <Field Name="AdjustmentCurrentCash" Ordinal="14" IsOptional="true" DbType="9" Precision="19" Scale="4" />
+                    <Field Name="CreateDate" Ordinal="15" HasDefaultValue="true" DefaultValue="sysdatetime()" DbType="29" Precision="7" />
+                    <Field Name="UpdateDate" Ordinal="16" HasDefaultValue="true" DefaultValue="sysdatetime()" DbType="29" Precision="7" />
+                    <Field Name="Version" Ordinal="17" HasDefaultValue="true" DefaultValue="1" DbType="8" Precision="10" />
+                  </Fields>
+                </Table>
+                <Table Name="Transaction">
+                  <PkConstraintName Name="PK_Transaction" />
+                  <Fields>
+                    <Field Name="TransactionId" Ordinal="1" IsIdentity="true" IsPrimaryKey="true" DbType="0" Precision="19" />
+                    <Field Name="UserId" Ordinal="2" DbType="8" Precision="10" />
+                    <Field Name="TransactionTypeId" Ordinal="3" DbType="16" Precision="5" />
+                    <Field Name="TransactionDate" Ordinal="4" HasDefaultValue="true" DefaultValue="sysdatetime()" DbType="29" Precision="7" />
+                    <Field Name="StockId" Ordinal="5" DbType="8" Precision="10" />
+                    <Field Name="Price" Ordinal="6" DbType="9" Precision="19" Scale="4" />
+                    <Field Name="Lot" Ordinal="7" DbType="0" Precision="19" />
+                    <Field Name="Shared" Ordinal="8" DbType="0" Precision="19" />
+                    <Field Name="GrossAmount" Ordinal="9" DbType="10" Length="10" />
+                    <Field Name="TransactionFee" Ordinal="10" DbType="9" Precision="19" Scale="4" />
+                    <Field Name="NetAmount" Ordinal="11" DbType="9" Precision="19" Scale="4" />
+                    <Field Name="IsSellFirst" Ordinal="12" HasDefaultValue="true" DefaultValue="0" DbType="2" />
+                    <Field Name="BuyTransactionId" Ordinal="13" IsOptional="true" DbType="0" Precision="19" />
+                    <Field Name="SellTransactionId" Ordinal="14" IsOptional="true" DbType="0" Precision="19" />
+                    <Field Name="TransactionStatusId" Ordinal="15" DbType="16" Precision="5" />
+                    <Field Name="CancelDate" Ordinal="16" IsOptional="true" DbType="29" Precision="7" />
+                    <Field Name="CreateDate" Ordinal="17" HasDefaultValue="true" DefaultValue="sysdatetime()" DbType="29" Precision="7" />
+                    <Field Name="UpdateDate" Ordinal="18" HasDefaultValue="true" DefaultValue="sysdatetime()" DbType="29" Precision="7" />
+                    <Field Name="Version" Ordinal="19" HasDefaultValue="true" DefaultValue="1" DbType="0" Precision="19" />
+                  </Fields>
+                </Table>
+                <Table Name="TransactionStatus">
+                  <PkConstraintName Name="PK_TransactionStatus" />
+                  <Fields>
+                    <Field Name="TransactionStatusId" Ordinal="1" IsIdentity="true" IsPrimaryKey="true" DbType="16" Precision="5" />
                     <Field Name="Code" Ordinal="2" DbType="12" Length="50" />
-                    <Field Name="Name" Ordinal="3" DbType="12" Length="100" />
+                    <Field Name="Name" Ordinal="3" DbType="12" Length="50" />
                     <Field Name="CreateDate" Ordinal="4" HasDefaultValue="true" DefaultValue="sysdatetime()" DbType="29" Precision="7" />
-                    <Field Name="UpdateDate" Ordinal="5" DbType="29" Precision="7" />
+                    <Field Name="Version" Ordinal="5" HasDefaultValue="true" DefaultValue="1" DbType="8" Precision="10" />
+                  </Fields>
+                </Table>
+                <Table Name="TransactionType">
+                  <PkConstraintName Name="PK_TransactionType" />
+                  <Fields>
+                    <Field Name="TransactionTypeId" Ordinal="1" IsIdentity="true" IsPrimaryKey="true" DbType="16" Precision="5" />
+                    <Field Name="Code" Ordinal="2" DbType="12" Length="50" />
+                    <Field Name="Name" Ordinal="3" DbType="12" Length="50" />
+                    <Field Name="CreateDate" Ordinal="4" HasDefaultValue="true" DefaultValue="sysdatetime()" DbType="29" Precision="7" />
+                    <Field Name="Version" Ordinal="5" HasDefaultValue="true" DefaultValue="1" DbType="8" Precision="10" />
+                  </Fields>
+                </Table>
+                <Table Name="User">
+                  <PkConstraintName Name="PK_User" />
+                  <Fields>
+                    <Field Name="UserId" Ordinal="1" IsIdentity="true" IsPrimaryKey="true" DbType="8" Precision="10" />
+                    <Field Name="UserName" Ordinal="2" DbType="12" Length="200" />
+                    <Field Name="Password" Ordinal="3" DbType="12" Length="200" />
+                    <Field Name="Name" Ordinal="4" DbType="12" Length="200" />
+                    <Field Name="CreateDate" Ordinal="5" HasDefaultValue="true" DefaultValue="sysdatetime()" DbType="29" Precision="7" />
+                    <Field Name="UpdateDate" Ordinal="6" HasDefaultValue="true" DefaultValue="sysdatetime()" DbType="29" Precision="7" />
+                    <Field Name="Version" Ordinal="7" HasDefaultValue="true" DefaultValue="1" DbType="0" Precision="19" />
                   </Fields>
                 </Table>
               </Tables>
             </Schema>
           </Schemas>
           <ForeignKeyConstraints>
+            <ForeignKeyConstraint Name="dbo:OrderHistory:FK_OrderHistory_OrderType">
+              <FieldPairs>
+                <FieldPair PkField="dbo:OrderType:OrderTypeId" FkField="dbo:OrderHistory:OrderTypeId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:Portofolio:FK_Portofolio_User">
+              <FieldPairs>
+                <FieldPair PkField="dbo:User:UserId" FkField="dbo:Portofolio:UserId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:PortofolioItem:FK_PortofolioItem_Portofolio">
+              <FieldPairs>
+                <FieldPair PkField="dbo:Portofolio:PortofolioId" FkField="dbo:PortofolioItem:PortofolioId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:PortofolioItem:FK_PortofolioItem_PortofolioItem">
+              <FieldPairs>
+                <FieldPair PkField="dbo:Stock:StockId" FkField="dbo:PortofolioItem:StockId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
             <ForeignKeyConstraint Name="dbo:Stock:FK_Stocks_StockSector">
               <FieldPairs>
                 <FieldPair PkField="dbo:StockSector:StockSectorId" FkField="dbo:Stock:StockSectorId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:Summary:FK_Summary_Summary">
+              <FieldPairs>
+                <FieldPair PkField="dbo:User:UserId" FkField="dbo:Summary:UserId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:Transaction:FK_BuyTransaction_Transaction">
+              <FieldPairs>
+                <FieldPair PkField="dbo:Transaction:TransactionId" FkField="dbo:Transaction:BuyTransactionId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:Transaction:FK_SellTransaction_Transaction">
+              <FieldPairs>
+                <FieldPair PkField="dbo:Transaction:TransactionId" FkField="dbo:Transaction:SellTransactionId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:Transaction:FK_Transaction_Stock">
+              <FieldPairs>
+                <FieldPair PkField="dbo:Stock:StockId" FkField="dbo:Transaction:StockId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:Transaction:FK_Transaction_TransactionStatus">
+              <FieldPairs>
+                <FieldPair PkField="dbo:TransactionStatus:TransactionStatusId" FkField="dbo:Transaction:TransactionStatusId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:Transaction:FK_Transaction_TransactionType">
+              <FieldPairs>
+                <FieldPair PkField="dbo:TransactionType:TransactionTypeId" FkField="dbo:Transaction:TransactionTypeId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:Transaction:FK_Transaction_User">
+              <FieldPairs>
+                <FieldPair PkField="dbo:User:UserId" FkField="dbo:Transaction:UserId" />
               </FieldPairs>
             </ForeignKeyConstraint>
           </ForeignKeyConstraints>
@@ -230,13 +631,69 @@
   <MappingStores>
     <MappingStore Type="2D18D138-1DD2-467E-86CC-4838250611AE">
       <EntityMappings>
+        <EntityMapping EntityName="Dbo:Configuration" TargetName="Dummy:dbo:Configuration">
+          <FieldMappings>
+            <FieldMapping FieldName="ConfigurationId" TargetFieldName="ConfigurationId" SequenceToUse="SCOPE_IDENTITY()" />
+            <FieldMapping FieldName="CreateDate" TargetFieldName="CreateDate" />
+            <FieldMapping FieldName="Name" TargetFieldName="Name" />
+            <FieldMapping FieldName="UpdateDate" TargetFieldName="UpdateDate" />
+            <FieldMapping FieldName="Value" TargetFieldName="Value" />
+            <FieldMapping FieldName="Version" TargetFieldName="Version" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName="Dbo:OrderHistory" TargetName="Dummy:dbo:OrderHistory">
+          <FieldMappings>
+            <FieldMapping FieldName="Amount" TargetFieldName="Amount" />
+            <FieldMapping FieldName="CancelDate" TargetFieldName="CancelDate" />
+            <FieldMapping FieldName="CreateDate" TargetFieldName="CreateDate" />
+            <FieldMapping FieldName="OrderDate" TargetFieldName="OrderDate" />
+            <FieldMapping FieldName="OrderHistoryId" TargetFieldName="OrderHistoryId" SequenceToUse="SCOPE_IDENTITY()" />
+            <FieldMapping FieldName="OrderTypeId" TargetFieldName="OrderTypeId" />
+            <FieldMapping FieldName="UpdateDate" TargetFieldName="UpdateDate" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName="Dbo:OrderType" TargetName="Dummy:dbo:OrderType">
+          <FieldMappings>
+            <FieldMapping FieldName="Code" TargetFieldName="Code" />
+            <FieldMapping FieldName="CreateDate" TargetFieldName="CreateDate" />
+            <FieldMapping FieldName="Name" TargetFieldName="Name" />
+            <FieldMapping FieldName="OrderTypeId" TargetFieldName="OrderTypeId" SequenceToUse="SCOPE_IDENTITY()" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName="Dbo:Portofolio" TargetName="Dummy:dbo:Portofolio" ActionCombination="2">
+          <FieldMappings>
+            <FieldMapping FieldName="Cash" TargetFieldName="Cash" />
+            <FieldMapping FieldName="CreateDate" TargetFieldName="CreateDate" />
+            <FieldMapping FieldName="PortofolioId" TargetFieldName="PortofolioId" />
+            <FieldMapping FieldName="UpdateDate" TargetFieldName="UpdateDate" />
+            <FieldMapping FieldName="UserId" TargetFieldName="UserId" />
+            <FieldMapping FieldName="Value" TargetFieldName="Value" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName="Dbo:PortofolioItem" TargetName="Dummy:dbo:PortofolioItem">
+          <FieldMappings>
+            <FieldMapping FieldName="AverageValue" TargetFieldName="AverageValue" />
+            <FieldMapping FieldName="CreateDate" TargetFieldName="CreateDate" />
+            <FieldMapping FieldName="Lot" TargetFieldName="Lot" />
+            <FieldMapping FieldName="PortofolioId" TargetFieldName="PortofolioId" />
+            <FieldMapping FieldName="PortofolioItemId" TargetFieldName="PortofolioItemId" SequenceToUse="SCOPE_IDENTITY()" />
+            <FieldMapping FieldName="Shared" TargetFieldName="Shared" />
+            <FieldMapping FieldName="StockId" TargetFieldName="StockId" />
+            <FieldMapping FieldName="TotalValue" TargetFieldName="TotalValue" />
+            <FieldMapping FieldName="UpdateDate" TargetFieldName="UpdateDate" />
+            <FieldMapping FieldName="Version" TargetFieldName="Version" />
+          </FieldMappings>
+        </EntityMapping>
         <EntityMapping EntityName="Dbo:Stock" TargetName="Dummy:dbo:Stock">
           <FieldMappings>
             <FieldMapping FieldName="Code" TargetFieldName="Code" />
             <FieldMapping FieldName="CreatedDate" TargetFieldName="CreatedDate" />
+            <FieldMapping FieldName="IsActive" TargetFieldName="IsActive" />
             <FieldMapping FieldName="Name" TargetFieldName="Name" />
+            <FieldMapping FieldName="ReleaseDate" TargetFieldName="ReleaseDate" />
             <FieldMapping FieldName="StockId" TargetFieldName="StockId" SequenceToUse="SCOPE_IDENTITY()" />
             <FieldMapping FieldName="StockSectorId" TargetFieldName="StockSectorId" />
+            <FieldMapping FieldName="TotalShare" TargetFieldName="TotalShare" />
             <FieldMapping FieldName="UpdateDate" TargetFieldName="UpdateDate" />
           </FieldMappings>
         </EntityMapping>
@@ -244,9 +701,83 @@
           <FieldMappings>
             <FieldMapping FieldName="Code" TargetFieldName="Code" />
             <FieldMapping FieldName="CreateDate" TargetFieldName="CreateDate" />
+            <FieldMapping FieldName="IsActive" TargetFieldName="IsActive" />
             <FieldMapping FieldName="Name" TargetFieldName="Name" />
             <FieldMapping FieldName="StockSectorId" TargetFieldName="StockSectorId" SequenceToUse="SCOPE_IDENTITY()" />
             <FieldMapping FieldName="UpdateDate" TargetFieldName="UpdateDate" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName="Dbo:Summary" TargetName="Dummy:dbo:Summary">
+          <FieldMappings>
+            <FieldMapping FieldName="AdjustmentCurrentCash" TargetFieldName="AdjustmentCurrentCash" />
+            <FieldMapping FieldName="CapitalGain" TargetFieldName="CapitalGain" />
+            <FieldMapping FieldName="CapitalLoss" TargetFieldName="CapitalLoss" />
+            <FieldMapping FieldName="CreateDate" TargetFieldName="CreateDate" />
+            <FieldMapping FieldName="CurrentCash" TargetFieldName="CurrentCash" />
+            <FieldMapping FieldName="Deviden" TargetFieldName="Deviden" />
+            <FieldMapping FieldName="LoanInterest" TargetFieldName="LoanInterest" />
+            <FieldMapping FieldName="MateraiFee" TargetFieldName="MateraiFee" />
+            <FieldMapping FieldName="SummaryDate" TargetFieldName="SummaryDate" />
+            <FieldMapping FieldName="SummaryId" TargetFieldName="SummaryId" SequenceToUse="SCOPE_IDENTITY()" />
+            <FieldMapping FieldName="TotalBuyNetAmount" TargetFieldName="TotalBuyNetAmount" />
+            <FieldMapping FieldName="TotalSellNetAmount" TargetFieldName="TotalSellNetAmount" />
+            <FieldMapping FieldName="Transfer" TargetFieldName="Transfer" />
+            <FieldMapping FieldName="UpdateDate" TargetFieldName="UpdateDate" />
+            <FieldMapping FieldName="UserId" TargetFieldName="UserId" />
+            <FieldMapping FieldName="Version" TargetFieldName="Version" />
+            <FieldMapping FieldName="Withdraw" TargetFieldName="Withdraw" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName="Dbo:Transaction" TargetName="Dummy:dbo:Transaction">
+          <FieldMappings>
+            <FieldMapping FieldName="BuyTransactionId" TargetFieldName="BuyTransactionId" />
+            <FieldMapping FieldName="CancelDate" TargetFieldName="CancelDate" />
+            <FieldMapping FieldName="CreateDate" TargetFieldName="CreateDate" />
+            <FieldMapping FieldName="GrossAmount" TargetFieldName="GrossAmount" />
+            <FieldMapping FieldName="IsSellFirst" TargetFieldName="IsSellFirst" />
+            <FieldMapping FieldName="Lot" TargetFieldName="Lot" />
+            <FieldMapping FieldName="NetAmount" TargetFieldName="NetAmount" />
+            <FieldMapping FieldName="Price" TargetFieldName="Price" />
+            <FieldMapping FieldName="SellTransactionId" TargetFieldName="SellTransactionId" />
+            <FieldMapping FieldName="Shared" TargetFieldName="Shared" />
+            <FieldMapping FieldName="StockId" TargetFieldName="StockId" />
+            <FieldMapping FieldName="TransactionDate" TargetFieldName="TransactionDate" />
+            <FieldMapping FieldName="TransactionFee" TargetFieldName="TransactionFee" />
+            <FieldMapping FieldName="TransactionId" TargetFieldName="TransactionId" SequenceToUse="SCOPE_IDENTITY()" />
+            <FieldMapping FieldName="TransactionStatusId" TargetFieldName="TransactionStatusId" />
+            <FieldMapping FieldName="TransactionTypeId" TargetFieldName="TransactionTypeId" />
+            <FieldMapping FieldName="UpdateDate" TargetFieldName="UpdateDate" />
+            <FieldMapping FieldName="UserId" TargetFieldName="UserId" />
+            <FieldMapping FieldName="Version" TargetFieldName="Version" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName="Dbo:TransactionStatus" TargetName="Dummy:dbo:TransactionStatus">
+          <FieldMappings>
+            <FieldMapping FieldName="Code" TargetFieldName="Code" />
+            <FieldMapping FieldName="CreateDate" TargetFieldName="CreateDate" />
+            <FieldMapping FieldName="Name" TargetFieldName="Name" />
+            <FieldMapping FieldName="TransactionStatusId" TargetFieldName="TransactionStatusId" SequenceToUse="SCOPE_IDENTITY()" />
+            <FieldMapping FieldName="Version" TargetFieldName="Version" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName="Dbo:TransactionType" TargetName="Dummy:dbo:TransactionType">
+          <FieldMappings>
+            <FieldMapping FieldName="Code" TargetFieldName="Code" />
+            <FieldMapping FieldName="CreateDate" TargetFieldName="CreateDate" />
+            <FieldMapping FieldName="Name" TargetFieldName="Name" />
+            <FieldMapping FieldName="TransactionTypeId" TargetFieldName="TransactionTypeId" SequenceToUse="SCOPE_IDENTITY()" />
+            <FieldMapping FieldName="Version" TargetFieldName="Version" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName="Dbo:User" TargetName="Dummy:dbo:User">
+          <FieldMappings>
+            <FieldMapping FieldName="CreateDate" TargetFieldName="CreateDate" />
+            <FieldMapping FieldName="Name" TargetFieldName="Name" />
+            <FieldMapping FieldName="Password" TargetFieldName="Password" />
+            <FieldMapping FieldName="UpdateDate" TargetFieldName="UpdateDate" />
+            <FieldMapping FieldName="UserId" TargetFieldName="UserId" SequenceToUse="SCOPE_IDENTITY()" />
+            <FieldMapping FieldName="UserName" TargetFieldName="UserName" />
+            <FieldMapping FieldName="Version" TargetFieldName="Version" />
           </FieldMappings>
         </EntityMapping>
       </EntityMappings>

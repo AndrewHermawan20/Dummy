@@ -23,6 +23,7 @@
     <ProjectReference Include="..\Dummy_Data\Dummy_Data.csproj" />
     <ProjectReference Include="..\Dummy_Model\Dummy_Model.csproj" />
     <ProjectReference Include="..\Dummy_Repository\Dummy_Repository.csproj" />
+    <ProjectReference Include="..\Dummy_Service\Dummy_Service.csproj" />
   </ItemGroup>
 
   <ItemGroup>
